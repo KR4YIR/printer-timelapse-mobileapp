@@ -1,0 +1,69 @@
+{
+  "expo": {
+    "name": "G-code Timelapse",
+    "slug": "gcode-timelapse",
+    "version": "2.0.0",
+    "orientation": "portrait",
+    "icon": "./assets/icon.png",
+    "userInterfaceStyle": "dark",
+    "scheme": "gcode-timelapse",
+    "newArchEnabled": true,
+    "splash": {
+      "image": "./assets/splash-icon.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#0f172a"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "com.gcodetimelapse.app",
+      "infoPlist": {
+        "NSLocalNetworkUsageDescription": "Yazıcı ve IP kameraya bağlanmak için yerel ağ erişimi gerekiyor",
+        "UIBackgroundModes": [
+          "fetch",
+          "remote-notification"
+        ]
+      }
+    },
+    "android": {
+      "package": "com.gcodetimelapse.app",
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#0f172a"
+      },
+      "edgeToEdgeEnabled": true,
+      "permissions": [
+        "INTERNET",
+        "ACCESS_NETWORK_STATE",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_DATA_SYNC",
+        "POST_NOTIFICATIONS",
+        "WAKE_LOCK"
+      ]
+    },
+    "web": {
+      "favicon": "./assets/favicon.png",
+      "bundler": "metro"
+    },
+    "plugins": [
+      "expo-router",
+      [
+        "expo-notifications",
+        {
+          "icon": "./assets/icon.png",
+          "color": "#0f172a"
+        }
+      ],
+      [
+        "expo-task-manager"
+      ],
+      "expo-av"
+    ],
+    "extra": {
+      "router": {},
+      "eas": {
+        "projectId": "60df2d77-f99b-47b5-8503-aa3279cb0200"
+      }
+    },
+    "owner": "ib6"
+  }
+}
