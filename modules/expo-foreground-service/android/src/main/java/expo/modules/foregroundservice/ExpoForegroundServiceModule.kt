@@ -7,14 +7,16 @@ class ExpoForegroundServiceModule : Module() {
   override fun definition() = ModuleDefinition {
     Name("ExpoForegroundService")
 
-    AsyncFunction<Unit>("startTimelapseForeground") { options: Map<String, Any?> ->
-      val ctx = appContext.reactContext ?: return@AsyncFunction
+    AsyncFunction("startTimelapseForeground") { options: Map<String, Any?> ->
+      val ctx = appContext.reactContext ?: return@AsyncFunction null
       TimelapseForegroundService.start(ctx, options)
+      null
     }
 
-    AsyncFunction<Unit>("stopTimelapseForeground") {
-      val ctx = appContext.reactContext ?: return@AsyncFunction
+    AsyncFunction("stopTimelapseForeground") {
+      val ctx = appContext.reactContext ?: return@AsyncFunction null
       TimelapseForegroundService.stop(ctx)
+      null
     }
   }
 }
