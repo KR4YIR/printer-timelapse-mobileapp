@@ -1,6 +1,5 @@
 package expo.modules.foregroundservice
 
-import android.content.Context
 import expo.modules.kotlin.modules.Module
 import expo.modules.kotlin.modules.ModuleDefinition
 
@@ -8,12 +7,12 @@ class ExpoForegroundServiceModule : Module() {
   override fun definition() = ModuleDefinition {
     Name("ExpoForegroundService")
 
-    AsyncFunction("startTimelapseForeground") { options: Map<String, Any?> ->
+    AsyncFunction<Unit>("startTimelapseForeground") { options: Map<String, Any?> ->
       val ctx = appContext.reactContext ?: return@AsyncFunction
       TimelapseForegroundService.start(ctx, options)
     }
 
-    AsyncFunction("stopTimelapseForeground") {
+    AsyncFunction<Unit>("stopTimelapseForeground") {
       val ctx = appContext.reactContext ?: return@AsyncFunction
       TimelapseForegroundService.stop(ctx)
     }
